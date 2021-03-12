@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+PATH=/d/miktex/texmfs/install/miktex/bin/x64:${PATH}
+
 BASEDIR="$(dirname "${0}")"
 cd "${BASEDIR}/src" || exit
 
