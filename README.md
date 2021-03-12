@@ -42,6 +42,8 @@ sudo apt install librsvg2-bin
 
 ```bash
 ./compile.sh ${PRO}
+# For example
+./compile.sh /d/miktex/
 ```
 
 ## 環境設定

@@ -6,7 +6,7 @@
 
 圖片 (Images)：@fig:a
 
-![Caption](img/ABAQUS.svg){#fig:a}
+![Ubuntu Logo](img/ubuntu-icon.svg){#fig:a width=30%}
 
 方程式 (Equations)：@eq:cases
 
