@@ -1,0 +1,10 @@
+---
+fignos-capitalise: true
+fignos-cleveref: true
+fignos-plus-name: figure
+tablenos-capitalise: true
+tablenos-cleveref: true
+eqnos-capitalise: true
+eqnos-cleveref: true
+eqnos-plus-name: equation
+---
