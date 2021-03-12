@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-PATH=/d/miktex/texmfs/install/miktex/bin/x64:${PATH}
-
 BASEDIR="$(dirname "${0}")"
 cd "${BASEDIR}/src" || exit
 
@@ -10,6 +8,9 @@ if [[ "$(uname)" == "Linux" ]]; then
     ZH_FONT="MoeStandardKai.ttf"
     MONO_FONT="DejaVu Sans Mono"
 else
+    PANDOC="${1}"
+    PATH="${PANDOC}/texmfs/install/miktex/bin/x64":"${PANDOC}":${PATH}
+
     EN_FONT="Times New Roman"
     ZH_FONT="DFKai-SB"
     MONO_FONT="Consolas"
