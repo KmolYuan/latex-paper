@@ -24,6 +24,8 @@ LaTex 的編譯器 (Compiler) 我們選用 Pandoc（以 Haskell 程式語言實�
 
 ## 環境設定
 
+Pandoc 使用 dpkg 安裝；pandoc-crossref 解壓縮後複製到 `/usr/bin` 或是 `${PATH}` 可找到的目錄。
+
 安裝 texlive：
 
 ```bash
@@ -38,7 +40,7 @@ sudo apt install librsvg2-bin
 
 # Windows
 
-使用 Git Bash 執行腳本，`${PRO}` 為可攜版安裝位置，若無則可忽略。
+使用 Git Bash 執行腳本，`${PRO}` 為可攜版安裝位置，若無則可忽略。可攜版連接裝置後記得啟動 `miktex-portable.cmd`，使 MikTex 圖示出現在系統通知欄中。
 
 ```bash
 ./compile.sh ${PRO}
@@ -50,16 +52,13 @@ sudo apt install librsvg2-bin
 
 建議使用可攜版環境。以下為從頭開始**安裝** / **更新**可攜版環境的步驟。
 
-+ 安裝 Miktex (Protable version)
-
-    <http://www.texts.io/support/0002/>
-
++ 安裝 [MikTex](http://www.texts.io/support/0002/) (Protable version)
     將安裝檔命名成 `miktex-protable.exe`，執行並安裝到指定目錄中，此目錄即為可攜裝置上的位置，如 `D:\miktex`，以下稱為 `${PRO}`。建議勾選自動安裝（安裝時需聯網）。安裝完後會出現啟動腳本 `miktex-portable.cmd`。
-
 + Pandoc
     直接下載 Windows 版本的 Zip 發行檔案，解壓縮到 `${PRO}`。
 + pandoc-crossref
     連結在最上方。下載後解壓縮到 `${PRO}`，注意版本是對應 Pandoc。
 + RSVG-convert
-    從以下連結下載執行檔，解壓縮到 `${PRO}`。
-    <https://sourceforge.net/projects/tumagcc/files/>
+    從[此連結](https://sourceforge.net/projects/tumagcc/files/)下載執行檔，解壓縮到 `${PRO}`。
+
+製作完後，此環境大小大約為 1.1GB。
