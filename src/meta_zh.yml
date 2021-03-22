@@ -6,6 +6,7 @@ secHeaderDelim: ""
 figPrefix: "圖"
 eqnPrefix: "式"
 tblPrefix: "表"
+secPrefix: "章節"
 linkReferences: true
 nameInLink: true
 autoEqnLabels: true
