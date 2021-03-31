@@ -1,8 +1,6 @@
 ---
 figureTitle: "圖"
 tableTitle: "表"
-titleDelim: "："
-secHeaderDelim: ""
 figPrefix: "圖"
 eqnPrefix: "式"
 tblPrefix: "表"

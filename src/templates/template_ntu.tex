@@ -36,8 +36,8 @@ $if(euro)$
   \newcommand{\euro}{€}
 $endif$
 
-\usepackage{caption}
-% \usepackage{subcaption}
+\usepackage[font=large, labelsep=space]{caption}
+\usepackage[font=large]{subfig}
 $if(CJKmainfont)$
     \usepackage{xeCJK, zhnumber, indentfirst, CJKnumb}
     \zhnumsetup{style={Traditional}}
@@ -50,16 +50,15 @@ $if(CJKmainfont)$
     \def\LARGE{\fontsize{20}{30}\selectfont}  % 章次
     \def\Large{\fontsize{16}{24}\selectfont}  % 節次
     \def\large{\fontsize{14}{21}\selectfont}  % 小節次
-    \renewcommand{\figurename}{圖}
     \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
-    \renewcommand{\tablename}{表}
     \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
     \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
     % 重製章節
     \renewcommand{\chaptername}{}
     \renewcommand{\thechapter}{第\zhnum{chapter}章}
     \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-    \renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+    \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
     % 設定行距與中英文字型
     \linespread{1}\selectfont
     \setCJKmainfont[AutoFakeBold=3,AutoFakeSlant=.4]{$CJKmainfont$}
@@ -71,6 +70,7 @@ $if(CJKmainfont)$
     \titleformat{\chapter}[block]{\LARGE\bfseries\centering}{\thechapter}{0.5em}{}
     \titleformat{\section}[block]{\Large\bfseries}{\thesection}{0.5em}{}
     \titleformat{\subsection}[block]{\large\bfseries}{\thesubsection}{0.5em}{}
+    \titleformat{\subsubsection}[block]{\large\bfseries}{\thesubsubsection}{0.5em}{}
     % 重製目錄
     \usepackage{titletoc}
     \titlespacing{\chapter}{0pt}{*0}{*2}

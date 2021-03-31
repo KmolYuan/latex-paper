@@ -4,9 +4,15 @@
 
 測試引用[@vf-two]。阿法 $\alpha$ 可以顯示在文字中嗎？
 
-圖片 (Images)：@fig:a
+圖片 (Images)：@fig:a、@fig:b 和 @fig:main。
 
-![Ubuntu Logo](img/ubuntu-icon.svg){#fig:a width=30%}
+<div id="fig:main">
+![Ubuntu Logo 1](img/ubuntu-icon.svg){#fig:a width=30%}
+\hspace{0.5cm}
+![Ubuntu Logo 2](img/ubuntu-icon.svg){#fig:b width=30%}
+
+主要的圖說
+</div>
 
 方程式 (Equations)：@eq:cases
 

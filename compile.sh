@@ -26,6 +26,7 @@ pandoc -o "../report.pdf" meta_zh.yml meta_ntu.yml \
     -V documentclass=report \
     --filter pandoc-crossref \
     --template=templates/template_ntu.tex \
+    --toc-depth=4 \
     -V mainfont="${EN_FONT}" \
     -V CJKmainfont="${ZH_FONT}" \
     -V fontsize=12pt \
