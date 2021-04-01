@@ -32,7 +32,7 @@ Pandoc 使用 dpkg 安裝；pandoc-crossref 解壓縮後複製到 `/usr/bin` 或
 sudo apt install texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai
 ```
 
-（可選但不建議）安裝 Microsoft 字型，但是有可能破壞原本的程式預設字型，建議只在 CI 或 docker 等虛擬環境中安裝。
+（可選但不建議）安裝 Microsoft 字型，有可能破壞原本的程式預設字型，建議只在 CI 或 docker 等虛擬環境中安裝。
 
 ```bash
 sudo apt install ttf-mscorefonts-installer
