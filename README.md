@@ -26,7 +26,7 @@ LaTex 的編譯器 (Compiler) 我們選用 Pandoc（以 Haskell 程式語言實�
 
 Pandoc 使用 dpkg 安裝；pandoc-crossref 解壓縮後複製到 `/usr/bin` 或是 `${PATH}` 可找到的目錄。
 
-安裝 texlive：
+安裝 texlive 與相關字型（Nimbus Roman 對應 Times New Roman，教育部標準楷書對應標楷體）：
 
 ```bash
 sudo apt install texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai

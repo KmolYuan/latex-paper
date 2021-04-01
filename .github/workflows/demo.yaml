@@ -7,8 +7,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         env:
-          VER: "2.12"
-          CR_VER: "0.3.10.0"
+          VER: "2.11.4"
+          CR_VER: "0.3.9.1"
         run: |
           sudo apt install -y texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai ttf-mscorefonts-installer librsvg2-bin
           wget https://github.com/jgm/pandoc/releases/download/${VER}/pandoc-${VER}-1-amd64.deb
