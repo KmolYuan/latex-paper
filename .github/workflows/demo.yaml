@@ -10,7 +10,7 @@ jobs:
           VER: "2.12"
           CR_VER: "0.3.10.0"
         run: |
-          sudo apt install -y texlive texlive-xetex texlive-lang-chinese librsvg2-bin
+          sudo apt install -y texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai ttf-mscorefonts-installer librsvg2-bin
           wget https://github.com/jgm/pandoc/releases/download/${VER}/pandoc-${VER}-1-amd64.deb
           wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${CR_VER}/pandoc-crossref-Linux.tar.xz
           tar Jxvf pandoc-crossref-Linux.tar.xz && rm -f pandoc-crossref-Linux.tar.xz
