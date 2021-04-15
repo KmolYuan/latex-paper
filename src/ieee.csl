@@ -215,8 +215,12 @@
     <sort>
       <key variable="citation-number"/>
     </sort>
+    <!-- Old style IEEE
     <layout delimiter=", ">
       <group prefix="[" suffix="]" delimiter=", ">
+    -->
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <group delimiter=", ">
         <text variable="citation-number"/>
         <text macro="citation-locator"/>
       </group>
