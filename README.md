@@ -68,3 +68,25 @@ sudo apt install librsvg2-bin
     從[此連結](https://sourceforge.net/projects/tumagcc/files/)下載執行檔，解壓縮到 `${PRO}`。
 
 製作完後，此環境大小大約為 1.1GB。
+
+# 檔案架構
+
+```bash
+├── compile.sh               # 編譯用腳本
+├── .github/workflows
+│   └── demo.yaml            # 自動發布 git tag 的 PDF，需要設定 secrets.PUBLISH_TOKEN
+└── src
+    ├── templates
+    │   └── template_*.tex   # 論文模板
+    ├── appendix
+    │   └── *.md             # 附錄，請手動轉換成 tex 再 include
+    ├── img
+    │   └── watermark-*.pdf  # 學校提供的浮水印
+    │   └── *.*              # 圖片檔案 (png, svg 等)
+    ├── *.md                 # 論文檔案
+    ├── refer.md             # 「參考文獻」的標題，Markdown 必須
+    ├── refer.bib            # BibTex 參考文獻，可以直接使用 Google scholar 提供的
+    ├── meta_ntu.yml         # 一些個人資訊以及誌謝、摘要、符號說明
+    ├── meta_*.yml           # 用於中英文切換的設定檔案
+    └── ieee.csl             # 修改自 IEEE 的引用格式，多支援了混合連續引用
+```
