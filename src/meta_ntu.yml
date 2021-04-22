@@ -7,13 +7,12 @@ institute_en: |
     College of Engineering
 category_zh: 碩士論文
 category_en: Master Thesis
-title_page:
 title_zh: 標題
 title_en: Title
 author_zh: 小明
 author_en: Ming
-advisor_zh: 小明
-advisor_en: Ming
+advisor_zh: 小明\hspace{3.51mm}博士
+advisor_en: Ming, Ph.D.
 doi: doi:10.xxxx/NTU2020xxxxx
 date_zh: 中華民國 xxx 年 x 月
 date_en: July, 2021

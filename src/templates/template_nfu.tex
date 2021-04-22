@@ -303,8 +303,20 @@ $endfor$
 \end{center}
 \end{titlepage}
 
+$if(doi)$
+\backgroundsetup{
+    contents={$doi$},
+    color=black,
+    angle=0,
+    position={current page.south east},
+    scale=0.8,
+    opacity=1,
+    hshift={-3.5cm},
+    vshift={1.5cm}
+}
+$endif$
+
 % Title page
-$if(title_page)$
 \begin{titlepage}
 \begin{center}
 \setcounter{page}{0}
@@ -331,7 +343,6 @@ $if(title_page)$
 \vspace{2cm}
 \end{center}
 \end{titlepage}
-$endif$
 
 \newcommand\frontmatter{
     \cleardoublepage
@@ -354,19 +365,6 @@ $endif$
 % Document start
 % Set page number to arabic i ii...
 \frontmatter
-
-$if(doi)$
-\backgroundsetup{
-    contents={$doi$},
-    color=black,
-    angle=0,
-    position={current page.south east},
-    scale=0.8,
-    opacity=1,
-    hshift={-3.5cm},
-    vshift={1.5cm}
-}
-$endif$
 
 % Abstract ZH
 $if(abstract_zh)$
@@ -438,27 +436,6 @@ $endif$
 % Start normal page number, 1 2 3
 \mainmatter
 $body$
-
-% NatBib
-$if(natbib)$
-$if(bibliography)$
-    \renewcommand{\chaptername}{}
-    \renewcommand{\thechapter}{}
-    $if(biblio-title)$
-        $if(book-class)$
-        \renewcommand\bibname{$biblio-title$}
-        $else$
-        \renewcommand\refname{$biblio-title$}
-        $endif$
-    $endif$
-    \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
-$endif$
-$endif$
-
-% Biblatex
-$if(biblatex)$
-\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
-$endif$
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 

@@ -284,56 +284,90 @@ $endfor$
 \begin{titlepage}
 \begin{center}
 \setcounter{page}{0}
-\vspace{1cm}
-\fontsize{36}{54}\selectfont{$university_zh$\par}
-\fontsize{28}{42}\selectfont{$institute_zh$\par}
-\vspace{1cm}
-\fontsize{24}{36}\selectfont{$category_zh$\par}
+\vspace{33mm}
+\LARGE\selectfont{
+    $university_zh$\par
+    $category_zh$\par
+}
+\Large\selectfont{
+    $institute_en$\par
+    $university_en$\par
+    $category_en$\par
+}
 \vspace{2cm}
-\fontsize{20}{30}\selectfont{
+\LARGE\selectfont{
     $title_zh$\par
     \textbf{$title_en$}\par
 }
 \vspace{\fill}
-\fontsize{18}{27}\selectfont{
-    研究生：$author_zh$\par
-    指導教授：$advisor_zh$\par
+\LARGE\selectfont{
+    $author_zh$\par
+    $author_en$\par
 }
-\vspace{1.5cm}
-\fontsize{16}{24}\selectfont{$date_zh$\par}
-\vspace{2cm}
+\vspace{25mm}
+\LARGE\selectfont{
+    指導教授：$advisor_zh$\par
+    Advisor: $advisor_en$\par
+}
+\vspace{15mm}
+\LARGE\selectfont{
+    $date_zh$\par
+    $date_en$\par
+}
+\vspace{33mm}
 \end{center}
 \end{titlepage}
 
+$if(doi)$
+\backgroundsetup{
+    contents={$doi$},
+    color=black,
+    angle=0,
+    position={current page.south east},
+    scale=0.8,
+    opacity=1,
+    hshift={-3.5cm},
+    vshift={1.5cm}
+}
+$endif$
+
 % Title page
-$if(title_page)$
 \begin{titlepage}
 \begin{center}
 \setcounter{page}{0}
-\fontsize{18}{30}\selectfont{
-    $title_zh$\par
-    $title_en$\par
-}
-\vspace{1.75cm}
-\fontsize{14}{21}\selectfont{
-    研究生：$author_zh$ \hfill Student: $author_en$\par
-    指導教授：$advisor_zh$ \hfill Advisor: $advisor_en$\par
-}
-\vspace{1.75cm}
-\fontsize{14}{21}\selectfont{
+\vspace{33mm}
+\LARGE\selectfont{
     $university_zh$\par
-    $institute_zh$\par
     $category_zh$\par
 }
-\vspace{1.5cm}
-\fontsize{16}{21}\selectfont{$title_page$\par}
-\vspace{\fill}
-\fontsize{16}{21}\selectfont{$date_en$\par}
-\fontsize{16}{24}\selectfont{$date_zh$\par}
+\Large\selectfont{
+    $institute_en$\par
+    $university_en$\par
+    $category_en$\par
+}
 \vspace{2cm}
+\LARGE\selectfont{
+    $title_zh$\par
+    \textbf{$title_en$}\par
+}
+\vspace{\fill}
+\LARGE\selectfont{
+    $author_zh$\par
+    $author_en$\par
+}
+\vspace{25mm}
+\LARGE\selectfont{
+    指導教授：$advisor_zh$\par
+    Advisor: $advisor_en$\par
+}
+\vspace{15mm}
+\LARGE\selectfont{
+    $date_zh$\par
+    $date_en$\par
+}
+\vspace{33mm}
 \end{center}
 \end{titlepage}
-$endif$
 
 \newcommand\frontmatter{
     \cleardoublepage
@@ -357,31 +391,27 @@ $endif$
 % Set page number to arabic i ii...
 \frontmatter
 
-$if(doi)$
-\backgroundsetup{
-    contents={$doi$},
-    color=black,
-    angle=0,
-    position={current page.south east},
-    scale=0.8,
-    opacity=1,
-    hshift={-3.5cm},
-    vshift={1.5cm}
-}
+% Acknowledgements
+$if(acknowledgements)$
+\renewcommand{\abstractname}{\LARGE \center 誌謝}
+\chapter*{誌謝}
+\addcontentsline{toc}{chapter}{誌謝}
+\fontsize{14}{21}\selectfont{$acknowledgements$}
 $endif$
 
 % Abstract ZH
 $if(abstract_zh)$
-\renewcommand{\abstractname}{\LARGE\center 中文摘要}
+\renewcommand{\abstractname}{\LARGE\center 摘要}
 \chapter*{\normalfont $title_zh$}
-\addcontentsline{toc}{chapter}{Chinese Abstract}
-\vspace{1.5cm}
-\fontsize{14}{21}\selectfont\centerline{學生：$author_zh$ \hfill 指導教授：$advisor_zh$}
-\vspace{1.5cm}
-\fontsize{14}{21}\selectfont\centerline{$university_zh$ $institute_zh$}
-\vspace{1cm}
+\begin{center}
+\addcontentsline{toc}{chapter}{摘要}
+\large\selectfont{
+    研究生：$author_zh$\par
+    指導教授：$advisor_zh$\par
+}
+\end{center}
+\vspace{12mm}
 \centerline{\fontsize{20}{30}\selectfont{\textbf{摘要}}}
-\vspace{0.5cm}
 \fontsize{14}{21}\selectfont{$abstract_zh$}
 $endif$
 
@@ -389,24 +419,17 @@ $endif$
 $if(abstract_en)$
 \renewcommand{\abstractname}{\LARGE\center Abstract}
 \chapter*{\normalfont $title_en$}
-\addcontentsline{toc}{chapter}{英文摘要}
-\vspace{1.5cm}
-\fontsize{14}{21}\selectfont\centerline{Student: $author_en$ \hfill Advisor: $advisor_en$}
-\vspace{1.5cm}
-\fontsize{14}{21}\selectfont\centerline{$institute_en$}
-\fontsize{14}{21}\selectfont\centerline{$university_en$}
-\vspace{1cm}
+\begin{center}
+\addcontentsline{toc}{chapter}{Abstract}
+\large\selectfont{
+    Student: $author_en$\par
+    Advisor: $advisor_en$\par
+}
+\end{center}
+\vspace{12mm}
 \centerline{\fontsize{20}{30}\selectfont{\textbf{Abstract}}}
 \vspace{0.5cm}
 \fontsize{14}{21}\selectfont{$abstract_en$}
-$endif$
-
-% Acknowledgements
-$if(acknowledgements)$
-\renewcommand{\abstractname}{\LARGE \center 誌謝}
-\chapter*{誌謝}
-\addcontentsline{toc}{chapter}{誌謝}
-\fontsize{14}{21}\selectfont{$acknowledgements$}
 $endif$
 
 $for(include-before)$
@@ -433,33 +456,14 @@ $if(toc)$
 \endgroup
 $endif$
 
-\chapter*{符號說明}
-\addcontentsline{toc}{chapter}{符號說明}
-\fontsize{14}{21}\selectfont{$symbols$}
-
 % Start normal page number, 1 2 3
 \mainmatter
 $body$
 
-% NatBib
-$if(natbib)$
-$if(bibliography)$
-    \renewcommand{\chaptername}{}
-    \renewcommand{\thechapter}{}
-    $if(biblio-title)$
-        $if(book-class)$
-        \renewcommand\bibname{$biblio-title$}
-        $else$
-        \renewcommand\refname{$biblio-title$}
-        $endif$
-    $endif$
-    \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
-$endif$
-$endif$
-
-% Biblatex
-$if(biblatex)$
-\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+$if(symbols)$
+\chapter*{符號說明}
+\addcontentsline{toc}{chapter}{符號說明}
+\fontsize{14}{21}\selectfont{$symbols$}
 $endif$
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
