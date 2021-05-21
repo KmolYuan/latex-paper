@@ -19,7 +19,6 @@ fi
 pandoc -o "../report.pdf" meta_zh.yml meta_ntu.yml \
     intro.md \
     conclusion.md \
-    refer.md \
     --pdf-engine=xelatex \
     --mathjax -N --toc \
     -V monofont="${MONO_FONT}" \

@@ -8,4 +8,5 @@ secPrefix: "章節"
 linkReferences: true
 nameInLink: true
 autoEqnLabels: true
+reference-section-title: 參考文獻
 ---
