@@ -32,4 +32,7 @@ pandoc -o "../report.pdf" meta_zh.yml meta_ntu.yml \
     -V geometry:margin=1in \
     --citeproc --bibliography=refer.bib --csl=ieee.csl \
     -M link-citations=true \
+    -M linkReferences=true \
+    -M nameInLink=true \
+    -M autoEqnLabels=true \
     -M watermark=img/watermark-ntu

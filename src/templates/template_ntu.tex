@@ -243,7 +243,7 @@ $if(csl-refs)$
 \usepackage{calc} % for \widthof, \maxof
 \newcommand{\CSLBlock}[1]{#1\hfill\break}
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\maxof{\widthof{#1}}{\csllabelwidth}}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
