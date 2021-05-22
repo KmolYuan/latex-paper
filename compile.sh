@@ -21,6 +21,7 @@ pandoc -o "../report.pdf" meta_zh.yml meta_ntu.yml \
     conclusion.md \
     --pdf-engine=xelatex \
     --mathjax -N --toc \
+    -V papersize=a4 \
     -V monofont="${MONO_FONT}" \
     -V documentclass=report \
     --filter pandoc-crossref \
