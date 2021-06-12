@@ -257,13 +257,13 @@ $if(watermark)$
 \usepackage[printwatermark]{xwatermark}
 \usepackage{tikz}
 \newsavebox\mybox
-\savebox\mybox{\tikz[opacity=1]\node{\includegraphics{$watermark$}};}
+\savebox\mybox{\tikz[opacity=0.5]\node{\includegraphics{$watermark$}};}
 \newwatermark[
-  pages=1-\lastdocpage,
+  allpages,
   angle=0,
   scale=0.5,
-  xpos=6.1799cm,
-  ypos=10.5647cm
+  xpos=62.5mm,
+  ypos=106mm
 ]{\usebox\mybox}
 $endif$
 $if(doi)$

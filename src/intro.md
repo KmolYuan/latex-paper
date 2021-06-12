@@ -1,8 +1,7 @@
 # Introduction
 
 測試非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常長的文字，沒有換行。
-
-測試引用[@vf-two][@efd]和連續引用[@vf-two;@ga;@pso;@de]。阿法 $\alpha$ 可以顯示在文字中嗎？
+阿法 $\alpha$ 可以顯示在文字中嗎？
 
 圖片 (Images)：@fig:a、@fig:b 和 @fig:main。
 
@@ -31,3 +30,6 @@ $$ {#eq:cases}
 | A | B |
 |:---:|:--:|
 | 10 | 20 |
+
+<!-- 測試引用[@vf-two][@efd]和連續引用[@vf-two;@ga;@pso;@de]。 -->
+引用測試，各種類型的參考文獻：[@hertz1882ueber;@rosheim1994robot;@lane1998advanced;@sapietova2016analysis;@essay62109;@gravagne2002phd-thesis]。
