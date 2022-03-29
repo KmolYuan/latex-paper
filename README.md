@@ -64,8 +64,8 @@ sudo apt install librsvg2-bin
 + 增加 `start.bat` 腳本將執行檔路徑加入 `PATH`。
   ```bat
   @echo off
-  set CWT=%~dp0
-  start cmd /k "set PATH=%CWT%pandoc-2.17.1.1;%CWT%texmfs\install\miktex\bin\x64;%CWT%rsvg-convert-2.40.19;%PATH%"
+  set CWD=%~dp0
+  start cmd /k "set PATH=%CWD%pandoc-2.17.1.1;%CWD%texmfs\install\miktex\bin\x64;%CWD%rsvg-convert-2.40.19;%PATH%"
   miktex-portable.cmd
   ```
 
