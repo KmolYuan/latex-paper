@@ -4,11 +4,11 @@
 
 + Compiler: [Pandoc](https://github.com/jgm/pandoc/releases/)
 + Cross reference filter: [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref/releases/)
-+ Markdown Editor: [Typora](https://typora.io/)
++ Markdown Live Editor: [Typora](https://typora.io/)
 
 Pandoc 流程：Markdown 文件 `.md` 套用 filter 之後，嵌入到 LaTex 模板中成為 `.tex` 檔案，再轉換為 `.pdf`。
 
-LaTex 為一種程式語言，支援標準庫 (Standard Libraries) 和外部程式庫 (External Libraries)，不過與一般程式語言不同的是，它可以直接表述 Tex 排版結構，類似於 PHP 之於 HTML 的概念。但是直接撰寫 LaTex 仍較複雜，因此可以藉由 Markdown 這種輕量的標註式語言先行完成文章，再交由 LaTex 排版。
+LaTex 為一種程式語言，支援標準庫 (Standard Libraries) 和外部程式庫 (External Libraries)，不過與一般程式語言不同的是，它可以直接表述 Tex 排版結構，類似於 PHP 之於 HTML 的概念。但是直接撰寫 LaTex 仍較複雜，因此可以藉由 Markdown 這種輕量的標註式語言先行完成文章，再交由 LaTex 排版。Markdown 是文本檔案，所以任何文字編輯器都可使用，若需要所見即所得的編輯器，坊間有很多，上面推薦 Typora。
 
 LaTex 的編譯器 (Compiler) 我們選用 Pandoc（以 Haskell 程式語言實作），而上述的外部程式庫則交由其他程式管理，Ubuntu 採用 TexLive；Windows 採用 MikTex，外部程式庫通常較為龐大，因此建議 Windows 以可攜環境為主。
 
@@ -60,8 +60,8 @@ sudo apt install librsvg2-bin
   將安裝檔命名成 `miktex-protable.exe`，執行並安裝到指定目錄中，此目錄即為可攜裝置上的位置，如 `D:\latex-env`。建議勾選自動安裝（安裝時需聯網）。安裝完後會出現啟動腳本 `miktex-portable.cmd`。
 + Pandoc
 + pandoc-crossref
-+ RSVG-convert
-+ 增加 `start.bat` 腳本將執行檔路徑加入 `PATH`。
++ [RSVG-convert](https://sourceforge.net/projects/tumagcc/files/)
++ 工具都齊全後，增加 `start.bat` 腳本將執行檔路徑加入 `PATH`。
   ```bat
   @echo off
   set CWD=%~dp0
@@ -69,11 +69,15 @@ sudo apt install librsvg2-bin
   miktex-portable.cmd
   ```
 
-製作完後，此環境大小大約為 1GB。
+建議保留各工具的版本號以利追蹤相容性。製作完後，此環境大小大約為 1GB。
 
 [現成的可攜環境](https://drive.google.com/file/d/1Z7ZMWJWszQmBCppz3DZx3tj74a5RAYTC/view?usp=sharing)
 
 # 檔案架構
+
+複製這個倉儲、新增圖片資源、撰寫 `*.md` 檔案、從 `refer.bib` 新增參考文獻、編譯成論文。
+
+新增 `*.md` 檔案時要加到 `compile.sh` / `complie.bat` 裡才會被編譯，如果只要看特定章節也可移除，增加編譯速度。
 
 ```
 ├── compile.sh               # 編譯用腳本
