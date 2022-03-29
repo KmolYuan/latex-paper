@@ -6,9 +6,10 @@ set EN_FONT="Times New Roman"
 set ZH_FONT="DFKai-SB"
 set MONO_FONT="Consolas"
 
-pandoc -o "../report.pdf" meta_zh.yml meta_ntu.yml^
-    intro.md^
-    conclusion.md^
+pandoc -o "../paper.pdf" meta_zh.yaml meta_ntu.yaml^
+    1-intro.md^
+    2-conclusion.md^
+    refer.md^
     --pdf-engine=xelatex^
     --mathjax -N --toc^
     -V papersize=a4^

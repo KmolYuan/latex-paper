@@ -436,23 +436,4 @@ $endif$
 % Start normal page number, 1 2 3
 \mainmatter
 $body$
-
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-
-% Appendix
-$if(include-after)$
-\newcounter{appendix_counter}
-\setcounter{appendix_counter}{1}
-\renewcommand{\thechapter}{附錄\zhnum{appendix_counter}}
-\renewcommand{\thesection}{\arabic{section}.}
-\renewcommand{\thesubsection}{\arabic{section}-\arabic{subsection}}
-$for(include-after)$
-\newpage
-$include-after$
-\addtocounter{appendix_counter}{1}
-$endfor$
-$endif$
-
-\addtocontents{toc}{\protect\setcounter{tocdepth}{$toc-depth$}}
-
 \end{document}

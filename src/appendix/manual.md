@@ -1,4 +1,0 @@
-My Manual
-===
-
-My manual...

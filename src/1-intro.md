@@ -23,9 +23,9 @@ y = 20
 \end{cases}
 $$ {#eq:cases}
 
-表格 (Tables)：@tbl:my-news
+表格 (Tables)：@tbl:my-params
 
-: My news {#tbl:my-news}
+: My Parameters {#tbl:my-params}
 
 | A | B |
 |:---:|:--:|
