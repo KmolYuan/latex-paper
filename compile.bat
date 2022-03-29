@@ -1,7 +1,7 @@
 @echo off
 setlocal
-set CWT=%~dp0
-cd %CWT%src
+set CWD=%~dp0
+cd %CWD%src
 set EN_FONT="Times New Roman"
 set ZH_FONT="DFKai-SB"
 set MONO_FONT="Consolas"
