@@ -46,12 +46,10 @@ sudo apt install librsvg2-bin
 
 # Windows
 
-使用 Git Bash 執行腳本，`${PRO}` 為可攜版安裝位置，若無則可忽略。可攜版連接裝置後記得啟動 `miktex-portable.cmd`，使 MikTex 圖示出現在系統通知欄中。
+執行腳本：
 
 ```bash
-./compile.sh ${PRO}
-# For example
-./compile.sh /d/miktex/
+.\compile.bat
 ```
 
 ## 環境設定
@@ -59,19 +57,25 @@ sudo apt install librsvg2-bin
 建議使用可攜版環境。以下為從頭開始**安裝** / **更新**可攜版環境的步驟。
 
 + 安裝 [MikTex](http://www.texts.io/support/0002/) (Protable version)
-    將安裝檔命名成 `miktex-protable.exe`，執行並安裝到指定目錄中，此目錄即為可攜裝置上的位置，如 `D:\miktex`，以下稱為 `${PRO}`。建議勾選自動安裝（安裝時需聯網）。安裝完後會出現啟動腳本 `miktex-portable.cmd`。
+  將安裝檔命名成 `miktex-protable.exe`，執行並安裝到指定目錄中，此目錄即為可攜裝置上的位置，如 `D:\latex-env`。建議勾選自動安裝（安裝時需聯網）。安裝完後會出現啟動腳本 `miktex-portable.cmd`。
 + Pandoc
-    直接下載 Windows 版本的 Zip 發行檔案，解壓縮到 `${PRO}`。
 + pandoc-crossref
-    連結在最上方。下載後解壓縮到 `${PRO}`，注意版本是對應 Pandoc。
 + RSVG-convert
-    從[此連結](https://sourceforge.net/projects/tumagcc/files/)下載執行檔，解壓縮到 `${PRO}`。
++ 增加 `start.bat` 腳本將執行檔路徑加入 `PATH`。
+  ```bat
+  @echo off
+  set CWT=%~dp0
+  start cmd /k "set PATH=%CWT%pandoc-2.17.1.1;%CWT%texmfs\install\miktex\bin\x64;%CWT%rsvg-convert-2.40.19;%PATH%"
+  miktex-portable.cmd
+  ```
 
-製作完後，此環境大小大約為 1.1GB。
+製作完後，此環境大小大約為 1GB。
+
+[現成的可攜環境](https://drive.google.com/file/d/1Z7ZMWJWszQmBCppz3DZx3tj74a5RAYTC/view?usp=sharing)
 
 # 檔案架構
 
-```bash
+```
 ├── compile.sh               # 編譯用腳本
 ├── .github/workflows
 │   └── demo.yaml            # 自動發布 git tag 的 PDF，需要設定 secrets.PUBLISH_TOKEN
