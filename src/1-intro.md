@@ -6,9 +6,9 @@
 圖片 (Images)：@fig:a、@fig:b 和 @fig:main。
 
 <div id="fig:main">
-![Ubuntu Logo 1](img/ubuntu-icon.svg){#fig:a width=30%}
+![Ubuntu Logo 1](img/ubuntu-icon.svg){#fig:a width=5cm}
 \hspace{0.5cm}
-![Ubuntu Logo 2](img/ubuntu-icon.svg){#fig:b width=30%}
+![Ubuntu Logo 2](img/ubuntu-icon.svg){#fig:b width=5cm}
 
 主要的圖說
 </div>

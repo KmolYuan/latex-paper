@@ -77,6 +77,8 @@ sudo apt install ttf-mscorefonts-installer
 
 新增 `*.md` 檔案時要加到 `compile.sh` / `complie.bat` 裡才會被編譯，如果只要看特定章節也可移除，增加編譯速度。
 
+另外可將輸出的檔名改成 `.docx`，變成 Microsoft Word 檔案，以供複製方程式和圖表（無法支援格式）。
+
 ```
 ├── compile.sh               # Ubuntu 編譯用腳本。
 ├── compile.bat              # Windows 編譯用腳本。

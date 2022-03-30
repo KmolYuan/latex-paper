@@ -11,4 +11,4 @@
 
 我的附錄，引用[附圖 @fig:appendix-img]。
 
-![Ubuntu Logo](img/ubuntu-icon.svg){#fig:appendix-img width=50%}
+![Ubuntu Logo](img/ubuntu-icon.svg){#fig:appendix-img width=5cm}
