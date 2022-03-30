@@ -39,6 +39,7 @@ abstract_en: |
 acknowledgements: |
   感謝很多人。
 symbols: |
-  | Symbols | Descriptions |
-  |:-------:|:-------------|
+  | 章節 | 符號 | 說明 |
+  |:----:|:---:|:-----|
+  | 1.1 | $\alpha$ | 阿法 |
 ---
