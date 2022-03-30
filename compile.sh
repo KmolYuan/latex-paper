@@ -10,6 +10,7 @@ pandoc -o "../paper.pdf" meta_zh.yaml meta_ntu.yaml \
     1-intro.md \
     2-conclusion.md \
     refer.md \
+    appendix.md \
     --pdf-engine=xelatex \
     --mathjax -N --toc \
     -V papersize=a4 \
