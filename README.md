@@ -83,7 +83,7 @@ sudo apt install ttf-mscorefonts-installer
 │   └── demo.yaml            # 自動發布 git tag 的 PDF，需要設定 secrets.PUBLISH_TOKEN
 └── src
     ├── img
-    │   └── watermark-*.pdf  # 學校提供的浮水印
+    │   └── watermark.pdf  # 學校提供的浮水印
     │   └── *.*              # 圖片檔案 (png, svg 等)
     ├── template.tex         # 論文模板
     ├── *.md                 # 論文檔案，建議以數字為首命名
