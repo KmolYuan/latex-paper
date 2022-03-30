@@ -16,7 +16,7 @@ LaTex 的編譯器 (Compiler) 我們選用 Pandoc（以 Haskell 程式語言實�
 
 # Ubuntu
 
-執行腳本：
+編譯腳本：
 
 ```bash
 ./compile.sh
@@ -26,10 +26,10 @@ LaTex 的編譯器 (Compiler) 我們選用 Pandoc（以 Haskell 程式語言實�
 
 Pandoc 使用 dpkg 安裝；pandoc-crossref 解壓縮後複製到 `/usr/bin` 或是 `${PATH}` 可找到的目錄。
 
-安裝 texlive 與相關字型（Nimbus Roman 對應 Times New Roman，教育部標準楷書對應標楷體）：
+安裝 texlive、相關字型（Nimbus Roman 對應 Times New Roman，教育部標準楷書對應標楷體）和 RSVG-convert：
 
 ```bash
-sudo apt install texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai
+sudo apt install texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai librsvg2-bin
 ```
 
 （可選但不建議）安裝 Microsoft 字型，有可能破壞原本的程式預設字型，建議只在 CI 或 docker 等虛擬環境中安裝。
@@ -38,15 +38,11 @@ sudo apt install texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-st
 sudo apt install ttf-mscorefonts-installer
 ```
 
-安裝 RSVG-convert：
-
-```bash
-sudo apt install librsvg2-bin
-```
-
 # Windows
 
-執行腳本：
+可攜環境腳本：從可攜環境執行 `start.bat`，彈出命令提示字元後，使用 `cd` / `x:` 指令切換到此模板的目錄和磁碟，執行編譯腳本。
+
+編譯腳本：
 
 ```bash
 .\compile.bat
@@ -62,6 +58,8 @@ sudo apt install librsvg2-bin
 + pandoc-crossref
 + [RSVG-convert](https://sourceforge.net/projects/tumagcc/files/)
 + 工具都齊全後，增加 `start.bat` 腳本將執行檔路徑加入 `PATH`。
+
+  安裝版能直接從命令提示字元執行，故不用此步驟。
   ```bat
   @echo off
   set CWD=%~dp0
@@ -86,15 +84,14 @@ sudo apt install librsvg2-bin
 └── src
     ├── templates
     │   └── template_*.tex   # 論文模板
-    ├── appendix
-    │   └── *.md             # 附錄，請手動轉換成 tex 再 include
     ├── img
     │   └── watermark-*.pdf  # 學校提供的浮水印
     │   └── *.*              # 圖片檔案 (png, svg 等)
-    ├── *.md                 # 論文檔案
+    ├── *.md                 # 論文檔案，建議以數字為首命名
     ├── refer.md             # 「參考文獻」的標題，Markdown 必須
     ├── refer.bib            # BibTex 參考文獻，可以直接使用 Google scholar 提供的
-    ├── meta_ntu.yml         # 一些個人資訊以及誌謝、摘要、符號說明
-    ├── meta_*.yml           # 用於中英文切換的設定檔案
+    ├── appendix.md          # 附錄，若有需要請手動增加 LOF 和 LOT
+    ├── meta_ntu.yaml        # 一些個人資訊以及誌謝、摘要、符號說明
+    ├── meta_*.yaml          # 用於中英文切換的設定檔案
     └── ieee.csl             # 修改自 IEEE 的引用格式，多支援了混合連續引用
 ```
