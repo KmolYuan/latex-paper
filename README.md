@@ -78,18 +78,21 @@ sudo apt install ttf-mscorefonts-installer
 新增 `*.md` 檔案時要加到 `compile.sh` / `complie.bat` 裡才會被編譯，如果只要看特定章節也可移除，增加編譯速度。
 
 ```
-├── compile.sh               # 編譯用腳本
+├── compile.sh               # Ubuntu 編譯用腳本。
+├── compile.bat              # Windows 編譯用腳本。
 ├── .github/workflows
-│   └── demo.yaml            # 自動發布 git tag 的 PDF，需要設定 secrets.PUBLISH_TOKEN
+│   └── demo.yaml            # 自動發布 git tag 的 PDF，需要設定 secrets.PUBLISH_TOKEN。
+│                            # 不建議在太長的編譯啟用。
 └── src
     ├── img
-    │   └── watermark.pdf  # 學校提供的浮水印
-    │   └── *.*              # 圖片檔案 (png, svg 等)
-    ├── template.tex         # 論文模板
-    ├── *.md                 # 論文檔案，建議以數字為首命名
-    ├── refer.md             # 「參考文獻」的標題，Markdown 必須
-    ├── refer.bib            # BibTex 參考文獻，可以直接使用 Google scholar 提供的
-    ├── appendix.md          # 附錄，若有需要請手動增加 LOF 和 LOT
-    ├── metadata.yaml        # 一些個人資訊以及誌謝、摘要、符號說明
-    └── ieee.csl             # 修改自 IEEE 的引用格式，多支援了混合連續引用
+    │   └── watermark.pdf    # 學校提供的浮水印。
+    │   └── *.*              # 圖片檔案 (png, svg 等)。
+    ├── template.tex         # 論文模板。
+    ├── *.md                 # 論文本文檔案，建議以數字為首命名。
+    ├── refer.md             # 「參考文獻」的標題，Markdown 必須。
+    ├── refer.bib            # BibTex 參考文獻，可以直接使用 Google scholar 提供的，
+    │                        # 每個 reference 可以自己重新命名。
+    ├── appendix.md          # 附錄，若有需要請手動增加 LOF 和 LOT。
+    ├── metadata.yaml        # 一些個人資訊以及誌謝、摘要、符號說明。
+    └── ieee.csl             # 修改自 IEEE 的引用格式，多支援了混合連續引用。
 ```
