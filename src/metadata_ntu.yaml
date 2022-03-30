@@ -1,4 +1,10 @@
 ---
+figureTitle: "圖"
+tableTitle: "表"
+figPrefix: "圖"
+eqnPrefix: "式"
+tblPrefix: "表"
+secPrefix: "章節"
 university_zh: 國立臺灣大學工學院機械工程研究所
 university_en: National Taiwan University
 institute_zh:

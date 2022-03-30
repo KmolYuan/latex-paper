@@ -6,7 +6,7 @@ EN_FONT="Nimbus Roman"
 ZH_FONT="MoeStandardKai.ttf"
 MONO_FONT="DejaVu Sans Mono"
 
-pandoc -o "../paper.pdf" meta_zh.yaml meta_ntu.yaml \
+pandoc -o "../paper.pdf" metadata_ntu.yaml \
     1-intro.md \
     2-conclusion.md \
     refer.md \
@@ -17,7 +17,7 @@ pandoc -o "../paper.pdf" meta_zh.yaml meta_ntu.yaml \
     -V monofont="${MONO_FONT}" \
     -V documentclass=report \
     --filter pandoc-crossref \
-    --template=templates/template_ntu.tex \
+    --template=template_ntu.tex \
     --toc-depth=4 \
     -V mainfont="${EN_FONT}" \
     -V CJKmainfont="${ZH_FONT}" \
