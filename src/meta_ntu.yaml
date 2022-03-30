@@ -3,8 +3,8 @@ university_zh: 國立臺灣大學工學院機械工程研究所
 university_en: National Taiwan University
 institute_zh:
 institute_en: |
-    Department of Mechanical Engineering \linebreak
-    College of Engineering
+  Department of Mechanical Engineering \linebreak
+  College of Engineering
 category_zh: 碩士論文
 category_en: Master Thesis
 title_zh: 標題
@@ -17,22 +17,22 @@ doi: "doi:10.xxxx/NTU2020xxxxx"
 date_zh: 中華民國 xxx 年 x 月
 date_en: July, 2021
 abstract_zh: |
-    本研究 ...
+  本研究 ...
 
-    &nbsp;
+  &nbsp;
 
-    \noindent
-    關鍵字：
+  \noindent
+  關鍵字：
 abstract_en: |
-    About my project ...
+  About my project ...
 
-    &nbsp;
+  &nbsp;
 
-    \noindent
-    Keywords:
+  \noindent
+  Keywords:
 acknowledgements: |
-    感謝很多人。
+  感謝很多人。
 symbols: |
-    | Symbols | Descriptions |
-    |:-------:|:-------------|
+  | Symbols | Descriptions |
+  |:-------:|:-------------|
 ---

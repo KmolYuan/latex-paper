@@ -396,7 +396,7 @@ $if(acknowledgements)$
 \renewcommand{\abstractname}{\LARGE \center 誌謝}
 \chapter*{誌謝}
 \addcontentsline{toc}{chapter}{誌謝}
-\fontsize{14}{21}\selectfont{$acknowledgements$}
+\fontsize{14}{21}\selectfont\par{$acknowledgements$}
 $endif$
 
 % Abstract ZH
@@ -409,10 +409,10 @@ $if(abstract_zh)$
     研究生：$author_zh$\par
     指導教授：$advisor_zh$\par
 }
-\end{center}
 \vspace{12mm}
-\centerline{\fontsize{20}{30}\selectfont{\textbf{摘要}}}
-\fontsize{14}{21}\selectfont{$abstract_zh$}
+\fontsize{20}{30}\selectfont{\textbf{摘要}}
+\end{center}
+\fontsize{14}{21}\selectfont\par{$abstract_zh$}
 $endif$
 
 % Abstract EN
@@ -425,11 +425,11 @@ $if(abstract_en)$
     Student: $author_en$\par
     Advisor: $advisor_en$\par
 }
-\end{center}
 \vspace{12mm}
-\centerline{\fontsize{20}{30}\selectfont{\textbf{Abstract}}}
+\fontsize{20}{30}\selectfont{\textbf{Abstract}}
+\end{center}
 \vspace{0.5cm}
-\fontsize{14}{21}\selectfont{$abstract_en$}
+\fontsize{14}{21}\selectfont\par{$abstract_en$}
 $endif$
 
 $for(include-before)$
