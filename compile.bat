@@ -7,8 +7,8 @@ set ZH_FONT="DFKai-SB"
 set MONO_FONT="Consolas"
 
 pandoc -o "../paper.pdf" metadata.yaml^
-    1-intro.md^
-    2-conclusion.md^
+    "1-intro.md"^
+    "2-section.md"^
     refer.md^
     appendix.md^
     --pdf-engine=xelatex^

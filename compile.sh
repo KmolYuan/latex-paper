@@ -7,8 +7,8 @@ ZH_FONT="MoeStandardKai.ttf"
 MONO_FONT="DejaVu Sans Mono"
 
 pandoc -o "../paper.pdf" metadata.yaml \
-    1-intro.md \
-    2-conclusion.md \
+    "1-intro.md" \
+    "2-section.md" \
     refer.md \
     appendix.md \
     --pdf-engine=xelatex \
