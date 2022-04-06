@@ -29,7 +29,7 @@ Pandoc 使用 dpkg 安裝；pandoc-crossref 解壓縮後複製到 `/usr/bin` 或
 安裝 texlive、相關字型（Nimbus Roman 對應 Times New Roman，教育部標準楷書對應標楷體）和 RSVG-convert：
 
 ```bash
-sudo apt install texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai librsvg2-bin
+sudo apt install texlive texlive-xetex texlive-science texlive-lang-chinese gsfonts fonts-moe-standard-kai librsvg2-bin
 ```
 
 （可選但不建議）安裝 Microsoft 字型，有可能破壞原本的程式預設字型，建議只在 CI 或 docker 等虛擬環境中安裝。
