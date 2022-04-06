@@ -80,7 +80,7 @@ $${#eq:cases}
 表格的語法如下所示。引用 @tbl:my-params。
 
 ```markdown
-: My Parameters {#tbl:my-params}
+: My Parameters {#表格代號}
 
 | A | B |
 |:---:|:--:|
@@ -94,3 +94,51 @@ $${#eq:cases}
 |:---:|:--:|
 | 10 | 20 |
 | 30 | 40 |
+
+## 虛擬碼
+
+虛擬碼使用 LaTex 套件 algorithm2e 達成，可混用數學，語法如下。無法引用。
+
+套件語法請參考：<https://www.ctan.org/pkg/algorithm2e>
+
+```markdown
+\begin{algorithm}[H]
+\DontPrintSemicolon
+\SetAlgoLined
+\KwResult{Write here the result}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
+\Input{Write here the input}
+\Output{Write here the output}
+\BlankLine
+\While{While condition}{
+    instructions\;
+    \eIf{condition}{
+        instructions1\;
+        instructions2\;
+    }{
+        instructions3\;
+    }
+}
+\caption{While loop with If/Else condition}
+\end{algorithm}
+```
+
+\begin{algorithm}[H]
+\DontPrintSemicolon
+\SetAlgoLined
+\KwResult{Write here the result}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
+\Input{Write here the input}
+\Output{Write here the output}
+\BlankLine
+\While{While condition}{
+    instructions\;
+    \eIf{condition}{
+        instructions1\;
+        instructions2\;
+    }{
+        instructions3\;
+    }
+}
+\caption{While loop with If/Else condition}
+\end{algorithm}
