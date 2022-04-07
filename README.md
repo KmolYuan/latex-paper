@@ -5,6 +5,7 @@
 + Compiler: [Pandoc](https://github.com/jgm/pandoc/releases/)
 + Cross reference filter: [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref/releases/)
 + Text Editor: [KDE Kate](https://kate-editor.org/)
++ 教學影片：<https://youtu.be/E8c6Tpuedok>
 
 Pandoc 流程：Markdown 文件 `.md` 套用 filter 之後，嵌入到 LaTex 模板中成為 `.tex` 檔案，再轉換為 `.pdf`。
 
