@@ -9,10 +9,6 @@ $if(fontfamily)$
 $else$
 \usepackage{lmodern}
 $endif$
-$if(linestretch)$
-\usepackage{setspace}
-\setstretch{$linestretch$}
-$endif$
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -271,8 +267,11 @@ $if(doi)$
 \backgroundsetup{contents={}}
 $endif$
 
-% Indent at first paragraph.
+% Indent at first paragraph
 \setlength{\parindent}{2.25em}
+% Line spacing
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
 
 % Algorithm pseudocode
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
@@ -417,7 +416,9 @@ $if(abstract_zh)$
 \vspace{12mm}
 \fontsize{20}{30}\selectfont{\textbf{摘要}}
 \end{center}
+\renewcommand{\baselinestretch}{2}
 \fontsize{14}{21}\selectfont\par{$abstract_zh$}
+\renewcommand{\baselinestretch}{1.5}
 $endif$
 
 % Abstract EN
