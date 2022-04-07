@@ -24,9 +24,8 @@ pandoc -o "../paper.pdf" metadata.yaml \
     -V mainfont="${EN_FONT}" \
     -V CJKmainfont="${ZH_FONT}" \
     -V fontsize=12pt \
-    -V geometry:margin=1in \
+    -V geometry:margin=3cm,bottom=2cm,footskip=5mm \
     -M link-citations=true \
     -M linkReferences=true \
     -M nameInLink=true \
-    -M autoEqnLabels=true \
-    -M watermark=img/watermark
+    -M autoEqnLabels=true
