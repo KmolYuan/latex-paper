@@ -112,7 +112,7 @@ $${#eq:cases}
 
 ## 偽代碼
 
-使用 LaTex 套件 algorithm2e 達成，可混用數學，語法如下。無法引用。
+使用 LaTex 套件 algorithm2e 達成，可混用數學，有自己的編碼方式。無法引用。
 
 套件語法請參考：<https://www.ctan.org/pkg/algorithm2e>
 

@@ -13,6 +13,7 @@ pandoc -o "../paper.pdf" metadata.yaml \
     appendix.md \
     --pdf-engine=xelatex \
     --mathjax -N --toc \
+    --highlight-style=espresso \
     -V papersize=a4 \
     -V monofont="${MONO_FONT}" \
     -V documentclass=report \

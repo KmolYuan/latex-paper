@@ -73,7 +73,7 @@ $if(CJKmainfont)$
     \titleformat{\subsubsection}[block]{\large\bfseries}{\thesubsubsection}{0.5em}{}
     % 重製目錄
     \usepackage{titletoc}
-    \titlespacing{\chapter}{0pt}{*0}{*2}
+    \titlespacing*{\chapter}{0pt}{-\topskip}{*2}
     \titlespacing{\section}{0pt}{*1}{*1}
     \titlespacing{\subsection}{0pt}{*1}{*1}
     \titlespacing{\subsubsection}{0pt}{*1}{*1}
@@ -262,8 +262,8 @@ $if(watermark)$
   allpages,
   angle=0,
   scale=0.5,
-  xpos=62.5mm,
-  ypos=106mm
+  xpos=61.5mm,
+  ypos=105mm
 ]{\usebox\mybox}
 $endif$
 $if(doi)$
@@ -441,6 +441,17 @@ $endfor$
 
 $if(toc)$
 \begingroup
+    \makeatletter
+    % Redefine the \chapter* header macro to remove vertical space
+    \def\@makeschapterhead#1{%
+      \vspace*{-10pt}
+      {\parindent \z@ \raggedright
+        \normalfont
+        \interlinepenalty\@M
+        \LARGE\bfseries\centering #1\par\nobreak
+        \vskip 5\p@
+      }}
+    \makeatother
     \renewcommand{\contentsname}{\center 目錄 \addcontentsline{toc}{chapter}{目錄}}
     \renewcommand{\numberline}[1]{~#1\hspace*{1em}}
     $if(colorlinks)$
