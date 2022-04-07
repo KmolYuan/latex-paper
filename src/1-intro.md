@@ -70,6 +70,8 @@ Pandoc 對於條列的規則比較嚴格，縮進要 4 個空白而非 2 個，�
 
 內嵌數學 $\alpha$ 使用兩組 `$` 符號，完整的方程式使用兩組 `$$` 符號當作括弧。引用 @eq:cases。
 
+LaTex 數學可以使用線上工具預覽：<https://latex.codecogs.com/eqneditor/editor.php>
+
 ```markdown
 內嵌數學 $\alpha$。
 
