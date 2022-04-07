@@ -40,11 +40,14 @@ sudo apt install ttf-mscorefonts-installer
 
 # Windows
 
-可攜環境腳本：從可攜環境執行 `start.bat`，彈出命令提示字元後，使用 `cd` / `x:` 指令切換到此模板的目錄和磁碟，執行編譯腳本。
+可攜環境腳本：從可攜環境執行 `start.bat`，執行編譯腳本。
 
 編譯腳本：
 
-```bash
+```bat
+REM 可攜版
+.\start.bat
+REM 安裝版
 .\compile.bat
 ```
 
@@ -57,14 +60,17 @@ sudo apt install ttf-mscorefonts-installer
 + Pandoc
 + pandoc-crossref
 + [RSVG-convert](https://sourceforge.net/projects/tumagcc/files/)
-+ 工具都齊全後，增加 `start.bat` 腳本將執行檔路徑加入 `PATH`。
++ 工具都齊全後，增加 `start.bat` 腳本，並將整個環境 `latex-env` 加到此倉儲中。
 
   安裝版能直接從命令提示字元執行，故不用此步驟。
   ```bat
   @echo off
+  setlocal
   set CWD=%~dp0
-  start cmd /k "set PATH=%CWD%pandoc-2.17.1.1;%CWD%texmfs\install\miktex\bin\x64;%CWD%rsvg-convert-2.40.19;%PATH%"
-  miktex-portable.cmd
+  cd %CWD%
+  call .\miktex-portable.cmd
+  start cmd /k "set PATH=%CWD%pandoc-2.17.1.1;%CWD%texmfs\install\miktex\bin\x64;%CWD%rsvg-convert-2.40.19;%PATH% && call .\compile.bat && if %ERRORLEVEL% EQU 0 exit"
+  endlocal
   ```
 
 建議保留各工具的版本號以利追蹤相容性。製作完後，此環境大小大約為 1GB。
