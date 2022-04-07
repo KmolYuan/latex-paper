@@ -48,8 +48,8 @@ $if(CJKmainfont)$
     \newfontlanguage{Chinese}{CHN}
     % 章次20級，節次16級，小節次以下14級，本文12級字
     \def\LARGE{\fontsize{20}{30}\selectfont}  % 章次
-    \def\Large{\fontsize{16}{24}\selectfont}  % 節次
-    \def\large{\fontsize{14}{21}\selectfont}  % 小節次
+    \def\Large{\fontsize{18}{24}\selectfont}  % 節次
+    \def\large{\fontsize{16}{24}\selectfont}  % 小節次
     \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
     \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
     \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
@@ -73,7 +73,7 @@ $if(CJKmainfont)$
     \titleformat{\subsubsection}[block]{\large\bfseries}{\thesubsubsection}{0.5em}{}
     % 重製目錄
     \usepackage{titletoc}
-    \titlespacing*{\chapter}{0pt}{-\topskip}{*2}
+    \titlespacing*{\chapter}{0pt}{-6mm}{*2}
     \titlespacing{\section}{0pt}{*1}{*1}
     \titlespacing{\subsection}{0pt}{*1}{*1}
     \titlespacing{\subsubsection}{0pt}{*1}{*1}
@@ -287,37 +287,39 @@ $endfor$
 \begin{titlepage}
 \begin{center}
 \setcounter{page}{0}
-\vspace{33mm}
-\LARGE\selectfont{
+\vspace*{0cm}
+\Large{
     $university_zh$\par
     $category_zh$\par
 }
-\Large\selectfont{
+\fontsize{14}{24}\selectfont{
     $institute_en$\par
+}
+\large{
     $university_en$\par
     $category_en$\par
 }
 \vspace{2cm}
-\LARGE\selectfont{
+\Large{
     $title_zh$\par
     \textbf{$title_en$}\par
 }
 \vspace{\fill}
-\LARGE\selectfont{
+\Large{
     $author_zh$\par
     $author_en$\par
 }
 \vspace{25mm}
-\LARGE\selectfont{
+\Large{
     指導教授：$advisor_zh$\par
     Advisor: $advisor_en$\par
 }
 \vspace{15mm}
-\LARGE\selectfont{
+\Large{
     $date_zh$\par
     $date_en$\par
 }
-\vspace{33mm}
+\vspace{1cm}
 \end{center}
 \end{titlepage}
 
@@ -335,42 +337,42 @@ $if(doi)$
 $endif$
 
 % Title page
-\begin{titlepage}
 \begin{center}
-\setcounter{page}{0}
-\vspace{33mm}
-\LARGE\selectfont{
+\vspace*{0cm}
+\Large{
     $university_zh$\par
     $category_zh$\par
 }
-\Large\selectfont{
+\fontsize{14}{24}\selectfont{
     $institute_en$\par
+}
+\large{
     $university_en$\par
     $category_en$\par
 }
 \vspace{2cm}
-\LARGE\selectfont{
+\Large{
     $title_zh$\par
     \textbf{$title_en$}\par
 }
 \vspace{\fill}
-\LARGE\selectfont{
+\Large{
     $author_zh$\par
     $author_en$\par
 }
 \vspace{25mm}
-\LARGE\selectfont{
+\Large{
     指導教授：$advisor_zh$\par
     Advisor: $advisor_en$\par
 }
 \vspace{15mm}
-\LARGE\selectfont{
+\Large{
     $date_zh$\par
     $date_en$\par
 }
-\vspace{33mm}
+\vspace{1cm}
+\pagenumbering{gobble}
 \end{center}
-\end{titlepage}
 
 \newcommand\frontmatter{
     \cleardoublepage
@@ -444,12 +446,12 @@ $if(toc)$
     \makeatletter
     % Redefine the \chapter* header macro to remove vertical space
     \def\@makeschapterhead#1{%
-      \vspace*{-10pt}
+      \vspace*{-10mm}
       {\parindent \z@ \raggedright
         \normalfont
         \interlinepenalty\@M
         \LARGE\bfseries\centering #1\par\nobreak
-        \vskip 5\p@
+        \vskip 14\p@
       }}
     \makeatother
     \renewcommand{\contentsname}{\center 目錄 \addcontentsline{toc}{chapter}{目錄}}
