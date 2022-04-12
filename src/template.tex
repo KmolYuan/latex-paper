@@ -403,7 +403,7 @@ $if(acknowledgements)$
 \renewcommand{\abstractname}{\LARGE \center 誌謝}
 \chapter*{誌謝}
 \addcontentsline{toc}{chapter}{誌謝}
-\fontsize{14}{21}\selectfont\par{$acknowledgements$}
+\par{$acknowledgements$}
 $endif$
 
 % Abstract ZH
@@ -420,7 +420,7 @@ $if(abstract_zh)$
 \fontsize{20}{30}\selectfont{\textbf{摘要}}
 \end{center}
 \renewcommand{\baselinestretch}{2}
-\fontsize{14}{21}\selectfont\par{$abstract_zh$}
+\par{$abstract_zh$}
 \renewcommand{\baselinestretch}{1.5}
 $endif$
 
@@ -438,7 +438,7 @@ $if(abstract_en)$
 \fontsize{20}{30}\selectfont{\textbf{Abstract}}
 \end{center}
 \vspace{0.5cm}
-\fontsize{14}{21}\selectfont\par{$abstract_en$}
+\par{$abstract_en$}
 $endif$
 
 $for(include-before)$
@@ -483,6 +483,6 @@ $body$
 $if(symbols)$
 \chapter*{符號說明}
 \addcontentsline{toc}{chapter}{符號說明}
-\fontsize{14}{21}\selectfont{$symbols$}
+\par{$symbols$}
 $endif$
 \end{document}
