@@ -32,8 +32,8 @@ $if(euro)$
   \newcommand{\euro}{€}
 $endif$
 
-\usepackage[font=large, labelsep=space]{caption}
-\usepackage[font=large]{subfig}
+\usepackage[font=normalsize, labelsep=space]{caption}
+\usepackage[font=normalsize]{subfig}
 $if(CJKmainfont)$
     \usepackage{xeCJK, zhnumber, indentfirst, CJKnumb}
     \zhnumsetup{style={Traditional}}
@@ -43,9 +43,10 @@ $if(CJKmainfont)$
     \XeTeXlinebreakskip = 0pt plus 1pt
     \newfontlanguage{Chinese}{CHN}
     % 章次20級，節次16級，小節次以下14級，本文12級字
-    \def\LARGE{\fontsize{20}{30}\selectfont}  % 章次
-    \def\Large{\fontsize{18}{20}\selectfont}  % 節次
-    \def\large{\fontsize{16}{20}\selectfont}  % 小節次
+    \def\LARGE{\fontsize{22}{30}\selectfont}  % 章次
+    \def\Large{\fontsize{20}{20}\selectfont}  % 節次
+    \def\large{\fontsize{18}{20}\selectfont}  % 小節次
+    \def\normalsize{\fontsize{14}{20}\selectfont}
     \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
     \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
     \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
@@ -400,7 +401,7 @@ $endif$
 
 % Acknowledgements
 $if(acknowledgements)$
-\renewcommand{\abstractname}{\LARGE \center 誌謝}
+\renewcommand{\abstractname}{\LARGE\center 誌謝}
 \chapter*{誌謝}
 \addcontentsline{toc}{chapter}{誌謝}
 \par{$acknowledgements$}
@@ -412,11 +413,11 @@ $if(abstract_zh)$
 \chapter*{\normalfont $title_zh$}
 \begin{center}
 \addcontentsline{toc}{chapter}{摘要}
-\large\selectfont{
+\fontsize{14}{12}\selectfont{
     研究生：$author_zh$\par
     指導教授：$advisor_zh$\par
 }
-\vspace{1cm}
+%\vspace{1cm}
 \fontsize{20}{30}\selectfont{\textbf{摘要}}
 \end{center}
 \renewcommand{\baselinestretch}{2}
@@ -427,17 +428,18 @@ $endif$
 % Abstract EN
 $if(abstract_en)$
 \renewcommand{\abstractname}{\LARGE\center Abstract}
+\titleformat{\chapter}[block]{\fontsize{22}{20}\centering}{\thechapter}{0.5em}{}
 \chapter*{\normalfont $title_en$}
+\titleformat{\chapter}[block]{\LARGE\bfseries\centering}{\thechapter}{0.5em}{}
 \begin{center}
-\addcontentsline{toc}{chapter}{\textbf{Abstract}}
-\large\selectfont{
+\addcontentsline{toc}{chapter}{Abstract}
+\fontsize{14}{12}\selectfont{
     Student: $author_en$\par
     Advisor: $advisor_en$\par
 }
-\vspace{1cm}
+%\vspace{1cm}
 \fontsize{20}{30}\selectfont{\textbf{Abstract}}
 \end{center}
-\vspace{0.5cm}
 \par{$abstract_en$}
 $endif$
 
