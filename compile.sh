@@ -2,8 +2,8 @@
 
 BASEDIR="$(dirname "${0}")"
 cd "${BASEDIR}/src" || exit
-EN_FONT="Nimbus Roman"
-ZH_FONT="MoeStandardKai.ttf"
+EN_FONT="Times New Roman"
+ZH_FONT="DFKai-SB"
 MONO_FONT="DejaVu Sans Mono"
 
 pandoc -o "../paper.pdf" metadata.yaml \
