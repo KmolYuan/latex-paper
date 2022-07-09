@@ -9,7 +9,7 @@
 
 Pandoc 流程：Markdown 文件 `.md` 套用 filter 之後，嵌入到 LaTex 模板中成為 `.tex` 檔案，再轉換為 `.pdf`。
 
-LaTex 為一種程式語言，支援標準庫 (Standard Libraries) 和外部程式庫 (External Libraries)，不過與一般程式語言不同的是，它可以直接表述 Tex 排版結構，類似於 PHP 之於 HTML 的概念。但是直接撰寫 LaTex 仍較複雜，因此可以藉由 Markdown 這種輕量的標註式語言先行完成文章，再交由 LaTex 排版。Markdown 是文本檔案，所以任何文字編輯器都可使用，若需要所見即所得的編輯器，坊間有很多，上面推薦 Typora。
+LaTex 為一種程式語言，支援標準庫 (Standard Libraries) 和外部程式庫 (External Libraries)，不過與一般程式語言不同的是，它可以直接表述 Tex 排版結構，類似於 PHP 之於 HTML 的概念。但是直接撰寫 LaTex 仍較複雜，因此可以藉由 Markdown 這種輕量的標註式語言先行完成文章，再交由 LaTex 排版。Markdown 是文本檔案，所以任何文字編輯器都可使用，若需要所見即所得的編輯器，坊間有很多，推薦 Typora。
 
 LaTex 的編譯器 (Compiler) 我們選用 Pandoc（以 Haskell 程式語言實作），而上述的外部程式庫則交由其他程式管理，Ubuntu 採用 TexLive；Windows 採用 MikTex，外部程式庫通常較為龐大，因此建議 Windows 以可攜環境為主。
 
@@ -27,10 +27,10 @@ LaTex 的編譯器 (Compiler) 我們選用 Pandoc（以 Haskell 程式語言實�
 
 Pandoc 使用 dpkg 安裝；pandoc-crossref 解壓縮後複製到 `/usr/bin` 或是 `${PATH}` 可找到的目錄。
 
-安裝 texlive、相關字型（Nimbus Roman 對應 Times New Roman，教育部標準楷書對應標楷體）和 RSVG-convert：
+安裝 texlive 和 RSVG-convert：
 
 ```bash
-sudo apt install texlive texlive-xetex texlive-science texlive-lang-chinese gsfonts fonts-moe-standard-kai librsvg2-bin
+sudo apt install texlive texlive-xetex texlive-science texlive-lang-chinese librsvg2-bin
 ```
 
 （可選但不建議）安裝 Microsoft 字型，有可能破壞原本的程式預設字型，建議只在 CI 或 docker 等虛擬環境中安裝。
@@ -38,6 +38,8 @@ sudo apt install texlive texlive-xetex texlive-science texlive-lang-chinese gsfo
 ```bash
 sudo apt install ttf-mscorefonts-installer
 ```
+
+另一個替代方案可從 `fonts` 目錄安裝字型，Microsoft 允許持有 Windows 授權下任意使用標楷體與 Times New Roman。
 
 # Windows
 
