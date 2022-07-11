@@ -33,13 +33,13 @@ Pandoc 使用 dpkg 安裝；pandoc-crossref 解壓縮後複製到 `/usr/bin` 或
 sudo apt install texlive texlive-xetex texlive-science texlive-lang-chinese librsvg2-bin
 ```
 
-（可選但不建議）安裝 Microsoft 字型，有可能破壞原本的程式預設字型，建議只在 CI 或 docker 等虛擬環境中安裝。
+Ubuntu 可從本倉儲的 `fonts` 目錄安裝字型，Microsoft 允許持有 Windows 授權下任意使用標楷體與 Times New Roman。
 
 ```bash
-sudo apt install ttf-mscorefonts-installer
+mkdir -p ~/.local/share/fonts/
+cp fonts/* ~/.local/share/fonts/
+fc-cache
 ```
-
-另一個替代方案可從 `fonts` 目錄安裝字型，Microsoft 允許持有 Windows 授權下任意使用標楷體與 Times New Roman。
 
 # Windows
 
