@@ -286,10 +286,8 @@ $endfor$
 
 \begin{document}
 
-%Cover
-\begin{titlepage}
-\begin{center}
-\setcounter{page}{0}
+% Cover
+\newcommand{\maketitlepage}{
 \vspace*{0cm}
 \Large{
     $university_zh$\par
@@ -306,6 +304,7 @@ $endfor$
 \Large{
     $title_zh$\par
     $title_en$\par
+    $if(draft)$（初稿）\par$endif$
 }
 \vspace{\fill}
 \Large{
@@ -323,6 +322,11 @@ $endfor$
     $date_en$\par
 }
 \vspace{1cm}
+}
+\begin{titlepage}
+\begin{center}
+\setcounter{page}{0}
+\maketitlepage
 \end{center}
 \end{titlepage}
 
@@ -341,39 +345,7 @@ $endif$
 
 % Title page
 \begin{center}
-\vspace*{0cm}
-\Large{
-    $university_zh$\par
-    $category_zh$\par
-}
-\fontsize{14}{20}\selectfont{
-    $institute_en$\par
-}
-\large{
-    $university_en$\par
-    $category_en$\par
-}
-\vspace{1cm}
-\Large{
-    $title_zh$\par
-    $title_en$\par
-}
-\vspace{\fill}
-\Large{
-    $author_zh$\par
-    $author_en$\par
-}
-\vspace{1cm}
-\Large{
-    指導教授：$advisor_zh$\par
-    Advisor: $advisor_en$\par
-}
-\vspace{1cm}
-\Large{
-    $date_zh$\par
-    $date_en$\par
-}
-\vspace{1cm}
+\maketitlepage
 \pagenumbering{gobble}
 \end{center}
 
