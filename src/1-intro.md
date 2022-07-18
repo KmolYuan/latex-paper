@@ -34,7 +34,7 @@ Pandoc 對於條列的規則比較嚴格，縮進要 4 個空白而非 2 個，�
 引用單一的參考 @vf-two @efd 和連續引用 [@vf-two;...]。
 ```
 
-引用單一的參考 @vf-two @efd 和連續引用 [@vf-two;@ga;@pso;@de;@hertz1882ueber;@rosheim1994robot;@lane1998advanced;@sapietova2016analysis;@essay62109;@gravagne2002phd-thesis]。
+引用單一的參考 @vf-two 與 @efd 和連續引用 [@vf-two;@ga;@pso;@de;@hertz1882ueber;@rosheim1994robot;@lane1998advanced;@sapietova2016analysis;@essay62109;@gravagne2002phd-thesis]。
 
 ## 圖片
 
@@ -89,6 +89,8 @@ $$
 x = 10
 \\
 y = 20
+\\
+C = \boldsymbol{\mathit{I}}A \times B
 \end{cases}
 $${#eq:cases}
 
