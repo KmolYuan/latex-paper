@@ -309,143 +309,100 @@
   </citation>
   <!-- Bibliography -->
   <bibliography entry-spacing="0" second-field-align="flush">
-    <layout>
+    <layout suffix=".">
       <!-- Citation Number -->
       <text variable="citation-number" prefix="[" suffix="]"/>
       <!-- Author(s) -->
-      <text macro="author" suffix=", "/>
+      <text macro="author" suffix=". "/>
+      <text macro="issued" suffix=". "/>
       <!-- Rest of Citation -->
       <choose>
         <!-- Specific Formats -->
         <if type="article-journal">
+          <text macro="title" suffix=". "/>
           <group delimiter=", ">
-            <text macro="title"/>
             <text variable="container-title" font-style="italic" form="short"/>
             <text macro="locators"/>
             <text macro="page"/>
-            <text macro="issued"/>
-            <text macro="status"/>
           </group>
-          <choose>
-            <if variable="URL DOI" match="none">
-              <text value="."/>
-            </if>
-            <else>
-              <text value=","/>
-            </else>
-          </choose>
-          <text macro="access"/>
         </if>
         <else-if type="paper-conference speech" match="any">
-          <group delimiter=", " suffix=".">
-            <text macro="title"/>
+          <text macro="title" suffix=". "/>
+          <group delimiter=", ">
             <text macro="event"/>
-            <text macro="issued"/>
             <text macro="locators"/>
             <text macro="page"/>
-            <text macro="status"/>
           </group>
-          <text macro="access"/>
         </else-if>
         <else-if type="report">
-          <group delimiter=", " suffix=".">
-            <text macro="title"/>
+          <text macro="title" suffix=". "/>
+          <group delimiter=", ">
             <text macro="publisher"/>
             <group delimiter=" ">
               <text variable="genre"/>
               <text variable="number"/>
             </group>
-            <text macro="issued"/>
           </group>
-          <text macro="access"/>
         </else-if>
         <else-if type="thesis">
-          <group delimiter=", " suffix=".">
-            <text macro="title"/>
+          <text macro="title" suffix=". "/>
+          <group delimiter=", ">
             <text variable="genre"/>
             <text macro="publisher"/>
-            <text macro="issued"/>
           </group>
-          <text macro="access"/>
         </else-if>
-        <else-if type="webpage post-weblog post" match="any">
-          <group delimiter=", " suffix=".">
-            <text macro="title"/>
-            <text variable="container-title" font-style="italic"/>
-            <text macro="issued"/>
-          </group>
+        <else-if type="webpage post-weblog" match="any">
+          <text macro="title" suffix=". "/>
+          <text variable="container-title" font-style="italic" suffix=". "/>
           <text macro="access"/>
         </else-if>
         <else-if type="patent">
-          <group delimiter=", ">
-            <text macro="title"/>
-            <text variable="number"/>
-            <text macro="issued"/>
-          </group>
-          <text macro="access"/>
-        </else-if>
-        <!-- Online Video -->
-        <else-if type="motion_picture">
-          <text macro="geographic-location" suffix=". "/>
-          <group delimiter=", " suffix=".">
-            <text macro="title"/>
-            <text macro="issued"/>
-          </group>
-          <text macro="access"/>
+          <text macro="title" suffix=". "/>
+          <text variable="number"/>
         </else-if>
         <!-- Generic/Fallback Formats -->
-        <else-if type="bill book graphic legal_case legislation report song" match="any">
-          <group delimiter=", " suffix=". ">
-            <text macro="title"/>
+        <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+          <text macro="title" suffix=". "/>
+          <group delimiter=", ">
             <text macro="locators"/>
-          </group>
-          <group delimiter=", " suffix=".">
             <text macro="publisher"/>
-            <text macro="issued"/>
             <text macro="page"/>
           </group>
-          <text macro="access"/>
         </else-if>
         <else-if type="article-magazine article-newspaper broadcast interview manuscript map patent personal_communication song speech thesis webpage" match="any">
-          <group delimiter=", " suffix=".">
-            <text macro="title"/>
+          <text macro="title" suffix=". "/>
+          <group delimiter=", ">
             <text variable="container-title" font-style="italic"/>
             <text macro="locators"/>
             <text macro="publisher"/>
             <text macro="page"/>
-            <text macro="issued"/>
           </group>
-          <text macro="access"/>
         </else-if>
         <else-if type="chapter paper-conference" match="any">
+          <text macro="title" suffix=". "/>
           <group delimiter=", " suffix=", ">
-            <text macro="title"/>
             <group delimiter=" ">
-              <text term="in"/>
+              <text term="in" text-case="capitalize-first"/>
               <text variable="container-title" font-style="italic"/>
             </group>
             <text macro="locators"/>
           </group>
           <text macro="editor" suffix=" "/>
-          <group delimiter=", " suffix=".">
+          <group delimiter=", ">
             <text macro="publisher"/>
-            <text macro="issued"/>
             <text macro="page"/>
           </group>
-          <text macro="access"/>
         </else-if>
         <else>
+          <text macro="title" suffix=". "/>
           <group delimiter=", " suffix=". ">
-            <text macro="title"/>
             <text variable="container-title" font-style="italic"/>
             <text macro="locators"/>
           </group>
-          <group delimiter=", " suffix=".">
+          <group delimiter=", ">
             <text macro="publisher"/>
             <text macro="page"/>
-            <text macro="issued"/>
           </group>
-          <text macro="access"/>
         </else>
       </choose>
     </layout>
