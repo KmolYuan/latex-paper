@@ -1,3 +1,18 @@
+# 使用 Word？
+
+如果你沒有在 Ubuntu 寫論文的需求，仍然可以藉由 Microsoft Word 達成 LaTex 的功能，以下是優劣比較。
+
+| 功能 | MS Word | 這個 repo |
+|:----:|:-------:|:---------:|
+| 所見即所得 | GUI | 依賴外部編輯器 |
+| 排版 | 自己設定 | 全自動 |
+| 大綱 | GUI | Markdown 語法 |
+| 交互參照 | GUI + 功能變數 | 延伸語法 |
+| 數學式 | GUI | LaTex Math 語法 |
+| 向量圖片 | 可插入無法修改/轉存 | 佳 | 
+| 編譯 PDF | 即時 | 較久 |
+| 參考文獻 | [Zotero](https://www.zotero.org/)（強烈推薦） | BibTex |
+
 # 簡介
 
 主要連結：
